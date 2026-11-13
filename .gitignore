@@ -1,0 +1,54 @@
+# --- Godot 4 ---
+# Editor cache / imported assets (regenerated automatically)
+.godot/
+.import/
+# Godot-specific temp files
+*.translation
+*.tmp
+# Mono / C# build output
+.mono/
+data_*/
+mono_crash.*.json
+
+# --- Export output ---
+build/
+builds/
+export/
+exports/
+bin/
+*.apk
+*.aab
+*.apks
+*.idsig
+*.exe
+*.pck
+*.zip
+
+# --- Android Gradle build template ---
+android/build/
+android/.build_version
+
+# --- Signing keys & secrets (NEVER commit) ---
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+keystore.properties
+signing.properties
+local.properties
+.env
+.env.*
+*.secret
+*secrets*
+# export_credentials.cfg holds keystore passwords in Godot 4
+.godot/export_credentials.cfg
+export_credentials.cfg
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
