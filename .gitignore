@@ -11,11 +11,12 @@ data_*/
 mono_crash.*.json
 
 # --- Export output ---
-build/
-builds/
-export/
-exports/
-bin/
+# (root-anchored so addons/*/bin/ GDExtension binaries are NOT ignored)
+/build/
+/builds/
+/export/
+/exports/
+/bin/
 *.apk
 *.aab
 *.apks
