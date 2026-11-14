@@ -13,7 +13,7 @@ extends Resource
 @export var launch_speed_y: float = 11.0
 @export var spin_speed_deg: float = 495.0
 ## Extra launches allowed while airborne (0 = only from a stuck state).
-@export var max_air_launches: int = 0
+@export var max_air_launches: int = 1
 
 @export_group("Hold to charge")
 @export var hold_to_charge: bool = false
@@ -33,8 +33,11 @@ extends Resource
 @export var bounce_restitution: float = 0.35
 @export var bounce_spin_factor: float = 0.5
 @export var bounce_pop_speed: float = 1.5
-## After this many bounces in one flight the object stops colliding and drops.
+## An object that bounces on a top face more than this many times in one
+## flight, or too slowly to pop back up, comes to rest there and the run ends.
 @export var max_bounces: int = 3
+## Height of the resting object's pivot above the surface it lies on.
+@export var rest_height: float = 0.1
 
 @export_group("Object shape")
 ## Distance from the pivot to the tip / to the handle end.

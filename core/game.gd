@@ -27,7 +27,7 @@ var _walls: Array[MeshInstance3D] = []
 var _surface_nodes: Dictionary[SurfaceRect, Node3D] = {}
 var _materials: Dictionary[Color, StandardMaterial3D] = {}
 
-var _control_mode: ControlMode = ControlMode.TAP
+var _control_mode: ControlMode = ControlMode.AIR
 var _accumulator: float = 0.0
 var _next_plank_index: int = 0
 var _next_plank_top: float = 0.0

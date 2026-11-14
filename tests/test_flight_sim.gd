@@ -96,6 +96,21 @@ func test_flat_impact_bounces() -> void:
 	assert_eq(sim.state, FlightSim.State.FALLING, "flat impact bounces")
 
 
+func test_flat_landing_rests_on_surface_and_ends_run() -> void:
+	var config: FeelConfig = _config()
+	config.max_air_launches = 0
+	var sim: FlightSim = FlightSim.new(config)
+	sim.surfaces.append(SurfaceRect.new(Rect2(-3.0, -1.0, 6.0, 1.0)))
+	sim.state = FlightSim.State.FLYING
+	sim.position = Vector2(0.0, 2.0)
+	sim.angle = 0.0
+	sim.kill_y = -10.0
+	_run_until_settled(sim)
+	assert_eq(sim.state, FlightSim.State.DEAD, "flat landing ends the run")
+	assert_eq(sim.death_reason, FlightSim.DeathReason.LANDED_FLAT, "death reason is landed flat")
+	assert_true(sim.position.y > 0.0, "object stays on top of the surface, never falls through")
+
+
 func test_underside_is_not_stickable() -> void:
 	var surface: SurfaceRect = SurfaceRect.new(Rect2(-1.0, 2.0, 2.0, 0.4))
 	var sim: FlightSim = _single_surface_sim(surface, Vector2(0.0, 0.5), PI * 0.5, Vector2(0.0, 6.0))
@@ -116,9 +131,10 @@ func test_falling_below_kill_line_dies() -> void:
 
 func test_air_launches_are_limited() -> void:
 	var config: FeelConfig = _config()
+	config.max_air_launches = 0
 	var sim: FlightSim = _course_sim(config, 0)
 	assert_true(sim.launch(1), "launch from stuck")
-	assert_true(not sim.launch(1), "no air launch by default")
+	assert_true(not sim.launch(1), "no air launch when disabled")
 	config.max_air_launches = 1
 	assert_true(sim.launch(-1), "one air launch when enabled")
 	assert_true(not sim.launch(1), "air launch budget is spent")

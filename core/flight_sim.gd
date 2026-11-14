@@ -8,6 +8,7 @@ extends RefCounted
 ## face, or body/handle touching first) bounces.
 
 enum State { STUCK, FLYING, FALLING, DEAD }
+enum DeathReason { NONE, FELL, LANDED_FLAT }
 
 signal launched(direction: int, power: float)
 signal stuck(quality: int, surface: SurfaceRect)
@@ -26,10 +27,10 @@ var angular_velocity: float = 0.0
 var kill_y: float = -INF
 var stuck_surface: SurfaceRect = null
 var air_launches_used: int = 0
+var death_reason: DeathReason = DeathReason.NONE
 
 var _ignored_surface: SurfaceRect = null
 var _bounce_count: int = 0
-var _ghost: bool = false
 
 
 func _init(p_config: FeelConfig) -> void:
@@ -46,14 +47,14 @@ func place_stuck(p_position: Vector2, p_angle: float, surface: SurfaceRect) -> v
 	_ignored_surface = null
 	air_launches_used = 0
 	_bounce_count = 0
-	_ghost = false
+	death_reason = DeathReason.NONE
 
 
 func can_launch() -> bool:
 	if state == State.STUCK:
 		return true
 	if state == State.FLYING or state == State.FALLING:
-		return not _ghost and air_launches_used < config.max_air_launches
+		return air_launches_used < config.max_air_launches
 	return false
 
 
@@ -93,9 +94,8 @@ func step(delta: float) -> void:
 
 	if position.y < kill_y:
 		state = State.DEAD
+		death_reason = DeathReason.FELL
 		died.emit()
-		return
-	if _ghost:
 		return
 	if _ignored_surface != null and not _touches(_ignored_surface):
 		_ignored_surface = null
@@ -145,16 +145,31 @@ func _bounce(previous_position: Vector2, previous_angle: float, hit: SurfaceRect
 	position = previous_position
 	angle = previous_angle
 	var normal_speed: float = velocity.dot(hit.normal)
+	_bounce_count += 1
+	if hit.face == SurfaceRect.Face.TOP:
+		var rebound_speed: float = -normal_speed * config.bounce_restitution
+		var is_settling: bool = _bounce_count > config.max_bounces or rebound_speed < config.bounce_pop_speed
+		if normal_speed <= 0.0 and is_settling:
+			_land_flat(hit)
+			return
 	if normal_speed < 0.0:
 		velocity -= (1.0 + config.bounce_restitution) * normal_speed * hit.normal
 	if velocity.dot(hit.normal) < config.bounce_pop_speed:
 		velocity += hit.normal * (config.bounce_pop_speed - velocity.dot(hit.normal))
 	angular_velocity *= -config.bounce_spin_factor
 	state = State.FALLING
-	_bounce_count += 1
-	if _bounce_count > config.max_bounces:
-		_ghost = true
 	bounced.emit(hit.point, hit.normal)
+
+
+## The object came to rest lying on top of a surface without sticking: the run ends there.
+func _land_flat(hit: SurfaceRect.Hit) -> void:
+	angle = 0.0 if cos(angle) >= 0.0 else PI
+	position.y = hit.point.y + config.rest_height
+	velocity = Vector2.ZERO
+	angular_velocity = 0.0
+	state = State.DEAD
+	death_reason = DeathReason.LANDED_FLAT
+	died.emit()
 
 
 func _touches(surface: SurfaceRect) -> bool:
