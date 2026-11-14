@@ -21,11 +21,44 @@ var rect: Rect2
 var stick_faces: int = FACES_TOP_AND_SIDES
 ## Permanent surfaces (side walls) are never culled.
 var permanent: bool = false
+## Generated row this surface was built from; null for floor and walls.
+var spec: PlatformSpec = null
+var bonus_claimed: bool = false
+## Horizontal sine motion: x = rest_x + amplitude * sin(phase + speed * time).
+var move_amplitude: float = 0.0
+var move_speed: float = 0.0
+var move_phase: float = 0.0
+## How far the surface moved during the latest advance().
+var last_delta: Vector2 = Vector2.ZERO
+
+var _rest_x: float = 0.0
 
 
 func _init(p_rect: Rect2 = Rect2(), p_stick_faces: int = FACES_TOP_AND_SIDES) -> void:
 	rect = p_rect
 	stick_faces = p_stick_faces
+	_rest_x = p_rect.position.x
+
+
+static func from_spec(p_spec: PlatformSpec) -> SurfaceRect:
+	var surface: SurfaceRect = SurfaceRect.new(p_spec.rect)
+	surface.spec = p_spec
+	surface.move_amplitude = p_spec.move_amplitude
+	surface.move_speed = p_spec.move_speed
+	surface.move_phase = p_spec.move_phase
+	return surface
+
+
+func is_moving() -> bool:
+	return move_amplitude != 0.0
+
+
+func advance(time: float) -> void:
+	if move_amplitude == 0.0:
+		return
+	var x: float = _rest_x + move_amplitude * sin(move_phase + move_speed * time)
+	last_delta = Vector2(x - rect.position.x, 0.0)
+	rect.position.x = x
 
 
 func is_stickable(face: int) -> bool:

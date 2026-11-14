@@ -7,19 +7,23 @@ func _config() -> FeelConfig:
 	return (load("res://data/feel_config.tres") as FeelConfig).duplicate() as FeelConfig
 
 
-## Sim with the real test course: walls, floor and the first `plank_count` planks.
-func _course_sim(config: FeelConfig, plank_count: int) -> FlightSim:
+func _level() -> LevelConfig:
+	return load("res://data/level_config.tres") as LevelConfig
+
+
+## Sim with the real level: walls, floor and the first `row_count` generated rows.
+func _course_sim(config: FeelConfig, row_count: int) -> FlightSim:
+	var level: LevelConfig = _level()
 	var sim: FlightSim = FlightSim.new(config)
 	for side: int in [-1, 1]:
-		sim.surfaces.append(SurfaceRect.new(TestCourse.wall_rect(side), SurfaceRect.FACES_NONE))
-	var floor_surface: SurfaceRect = SurfaceRect.new(TestCourse.floor_rect())
+		sim.surfaces.append(SurfaceRect.new(level.wall_rect(side), SurfaceRect.FACES_NONE))
+	var floor_surface: SurfaceRect = SurfaceRect.new(level.floor_rect())
 	sim.surfaces.append(floor_surface)
-	var top: float = 0.0
-	for index: int in plank_count:
-		top += TestCourse.step_height(index)
-		sim.surfaces.append(SurfaceRect.new(TestCourse.plank_rect(index, top)))
+	var generator: LevelGenerator = LevelGenerator.new(level, 1)
+	for index: int in row_count:
+		sim.surfaces.append(SurfaceRect.from_spec(generator.next()))
 	var angle: float = -PI * 0.5
-	var tip: Vector2 = Vector2(TestCourse.START_X, -config.stick_depth)
+	var tip: Vector2 = Vector2(level.start_x, -config.stick_depth)
 	sim.place_stuck(tip - Vector2.from_angle(angle) * config.tip_offset, angle, floor_surface)
 	return sim
 
@@ -51,7 +55,7 @@ func test_nominal_zigzag_climb_sticks() -> void:
 		assert_true(sim.launch(direction), "launch %d accepted" % jump)
 		_run_until_settled(sim)
 		assert_eq(sim.state, FlightSim.State.STUCK, "jump %d should stick" % jump)
-		var expected_top: float = TestCourse.NOMINAL_STEP * (jump + 1)
+		var expected_top: float = _level().intro_step * (jump + 1)
 		assert_true(absf(sim.tip_point().y - expected_top) < 0.5, "jump %d lands on plank %d" % [jump, jump])
 		direction = -direction
 
@@ -149,3 +153,33 @@ func test_charge_power_scales_launch() -> void:
 	strong.launch(1, 1.0)
 	assert_true(is_equal_approx(weak.velocity.y, config.launch_speed_y * config.charge_min_scale), "min charge")
 	assert_true(is_equal_approx(strong.velocity.y, config.launch_speed_y * config.charge_max_scale), "max charge")
+
+
+func test_stuck_object_rides_moving_surface() -> void:
+	var config: FeelConfig = _config()
+	var sim: FlightSim = FlightSim.new(config)
+	var surface: SurfaceRect = SurfaceRect.new(Rect2(-1.0, -0.4, 2.0, 0.4))
+	surface.move_amplitude = 1.0
+	surface.move_speed = 2.0
+	sim.surfaces.append(surface)
+	sim.place_stuck(Vector2(0.0, 0.4), -PI * 0.5, surface)
+	var offset_before: float = sim.position.x - surface.rect.position.x
+	for step: int in 90:
+		sim.step(config.sim_step)
+	assert_true(absf(surface.rect.position.x + 1.0) > 0.2, "surface actually moved")
+	assert_true(is_equal_approx(sim.position.x - surface.rect.position.x, offset_before), "object keeps its place on the surface")
+
+
+func test_pickup_is_collected_once_in_flight() -> void:
+	var sim: FlightSim = _course_sim(_config(), 0)
+	var pickup: Pickup = Pickup.new()
+	pickup.position = sim.position + Vector2(0.5, 1.2)
+	pickup.radius = 0.6
+	sim.pickups.append(pickup)
+	var collected: Array[Pickup] = []
+	sim.pickup_collected.connect(func(item: Pickup) -> void: collected.append(item))
+	sim.launch(1)
+	for step: int in 60:
+		sim.step(sim.config.sim_step)
+	assert_true(pickup.collected, "pickup on the flight path is collected")
+	assert_eq(collected.size(), 1, "pickup is reported exactly once")

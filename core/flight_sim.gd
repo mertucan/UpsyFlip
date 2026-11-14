@@ -13,10 +13,14 @@ enum DeathReason { NONE, FELL, LANDED_FLAT }
 signal launched(direction: int, power: float)
 signal stuck(quality: int, surface: SurfaceRect)
 signal bounced(point: Vector2, normal: Vector2)
+signal pickup_collected(pickup: Pickup)
 signal died
 
 var config: FeelConfig
 var surfaces: Array[SurfaceRect] = []
+var pickups: Array[Pickup] = []
+## Simulation clock in seconds; drives moving surfaces.
+var time: float = 0.0
 var state: State = State.STUCK
 var position: Vector2 = Vector2.ZERO
 ## Radians; direction the tip points (0 = +X, counter-clockwise positive).
@@ -84,7 +88,15 @@ func tip_point() -> Vector2:
 
 
 func step(delta: float) -> void:
-	if state == State.STUCK or state == State.DEAD:
+	time += delta
+	for surface: SurfaceRect in surfaces:
+		surface.advance(time)
+	if state == State.STUCK:
+		# Ride along with a moving surface.
+		if stuck_surface != null:
+			position += stuck_surface.last_delta
+		return
+	if state == State.DEAD:
 		return
 	var previous_position: Vector2 = position
 	var previous_angle: float = angle
@@ -102,10 +114,21 @@ func step(delta: float) -> void:
 
 	var tip: Vector2 = _tip_at(position, angle)
 	var previous_tip: Vector2 = _tip_at(previous_position, previous_angle)
+	var tail: Vector2 = _body_sample_at(position, angle, 0)
+	for pickup: Pickup in pickups:
+		if pickup.collected:
+			continue
+		var closest: Vector2 = Geometry2D.get_closest_point_to_segment(pickup.position, tail, tip)
+		if closest.distance_to(pickup.position) <= pickup.radius:
+			pickup.collected = true
+			pickup_collected.emit(pickup)
+
 	for surface: SurfaceRect in surfaces:
 		if surface == _ignored_surface or not surface.contains(tip):
 			continue
-		var hit: SurfaceRect.Hit = surface.find_entry(previous_tip, tip)
+		# Previous points are shifted by the surface's own motion so entry is
+		# measured relative to the surface.
+		var hit: SurfaceRect.Hit = surface.find_entry(previous_tip + surface.last_delta, tip)
 		var quality: StickRules.Quality = StickRules.Quality.BOUNCE
 		if surface.is_stickable(hit.face):
 			quality = StickRules.evaluate(
@@ -123,7 +146,8 @@ func step(delta: float) -> void:
 			if surface == _ignored_surface or not surface.contains(sample):
 				continue
 			var previous_sample: Vector2 = _body_sample_at(previous_position, previous_angle, index)
-			_bounce(previous_position, previous_angle, surface.find_entry(previous_sample, sample))
+			_bounce(previous_position, previous_angle,
+					surface.find_entry(previous_sample + surface.last_delta, sample))
 			return
 
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ThemeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/theme_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"forest"
+display_name = "FOREST"
+length_m = 150.0
+background_color = Color(0.08, 0.2, 0.16, 1)
+wall_color = Color(0.34, 0.24, 0.16, 1)
+stripe_color = Color(0.11, 0.27, 0.2, 1)
+platform_color = Color(0.66, 0.5, 0.3, 1)
+platform_underside_color = Color(0.25, 0.33, 0.2, 1)
+moving_platform_color = Color(0.62, 0.82, 0.36, 1)
+target_color = Color(0.95, 0.45, 0.15, 1)
+stripe_spacing = 3.5
