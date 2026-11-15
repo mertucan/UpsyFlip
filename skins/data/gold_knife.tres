@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://skins/skin_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"gold_knife"
+display_name = "GOLD KNIFE"
+model_id = &"knife"
+primary_color = Color(1, 0.84, 0.3, 1)
+secondary_color = Color(0.25, 0.2, 0.35, 1)
+accent_color = Color(1, 1, 1, 1)
+launch_speed_x = 5.0
+launch_speed_y = 11.0
+spin_speed_deg = 495.0
+gravity_scale = 1.0
+max_air_launches = 1
+stick_half_angle_deg = 35.0
+perfect_half_angle_deg = 10.0
+tip_local = Vector2(0.6, 0)
+tip_direction_deg = 0.0
+tip_count = 1
+tail_offset = 0.5
+front_offset = 0.417
+body_sample_count = 6
+ability = 0
+exclusive = true

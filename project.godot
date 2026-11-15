@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Upsy Flip"
-config/version="0.0.1"
+config/version="0.8.0"
 run/main_scene="res://core/game.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0.114, 0.141, 0.251, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +24,7 @@ SaveService="*res://autoload/save_service.gd"
 RemoteConfig="*res://autoload/remote_config.gd"
 Analytics="*res://autoload/analytics.gd"
 Economy="*res://autoload/economy.gd"
+PlayerProgress="*res://autoload/player_progress.gd"
 AdsService="*res://autoload/ads_service.gd"
 BillingService="*res://autoload/billing_service.gd"
 AudioService="*res://autoload/audio_service.gd"
@@ -42,12 +45,23 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/admob/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://ui/fonts/main_font.tres"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation", "res://localization/strings.pt_BR.translation", "res://localization/strings.de.translation", "res://localization/strings.fr.translation", "res://localization/strings.ru.translation", "res://localization/strings.ja.translation", "res://localization/strings.ko.translation", "res://localization/strings.tr.translation", "res://localization/strings.id.translation")
+
 [rendering]
 
 renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="mobile"
 textures/vram_compression/import_etc2_astc=true

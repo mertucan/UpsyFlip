@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://skins/skin_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"axe"
+display_name = "AXE"
+price_coins = 250
+price_gems = 0
+model_id = &"axe"
+primary_color = Color(0.78, 0.83, 0.9, 1)
+secondary_color = Color(0.68, 0.45, 0.26, 1)
+accent_color = Color(1, 0.82, 0.25, 1)
+launch_speed_x = 4.4
+launch_speed_y = 10.2
+spin_speed_deg = 330.0
+gravity_scale = 1.1
+max_air_launches = 1
+stick_half_angle_deg = 60.0
+perfect_half_angle_deg = 14.0
+tip_local = Vector2(0.34, -0.3)
+tip_direction_deg = -90.0
+tip_count = 1
+tail_offset = 0.5
+front_offset = 0.5
+body_sample_count = 6
+ability = 0

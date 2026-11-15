@@ -8,6 +8,8 @@ const TEST_DIR: String = "res://tests/"
 
 
 func _ready() -> void:
+	# Wait until the scene tree has finished setting up so tests can add nodes.
+	await get_tree().process_frame
 	var total: int = 0
 	var failed: int = 0
 	for file_name: String in _find_test_files():
@@ -22,7 +24,8 @@ func _ready() -> void:
 				continue
 			var case: TestCase = script.new() as TestCase
 			case.tree = get_tree()
-			case.call(method_name)
+			# Tests may be coroutines (e.g. scene tests that wait for frames).
+			await case.call(method_name)
 			total += 1
 			if case.failures.is_empty():
 				print("PASS  %s::%s" % [file_name, method_name])

@@ -22,9 +22,7 @@ func _course_sim(config: FeelConfig, row_count: int) -> FlightSim:
 	var generator: LevelGenerator = LevelGenerator.new(level, 1)
 	for index: int in row_count:
 		sim.surfaces.append(SurfaceRect.from_spec(generator.next()))
-	var angle: float = -PI * 0.5
-	var tip: Vector2 = Vector2(level.start_x, -config.stick_depth)
-	sim.place_stuck(tip - Vector2.from_angle(angle) * config.tip_offset, angle, floor_surface)
+	sim.place_stuck_in(Vector2(level.start_x, 0.0), -PI * 0.5, floor_surface)
 	return sim
 
 
@@ -101,9 +99,8 @@ func test_flat_impact_bounces() -> void:
 
 
 func test_flat_landing_rests_on_surface_and_ends_run() -> void:
-	var config: FeelConfig = _config()
-	config.max_air_launches = 0
-	var sim: FlightSim = FlightSim.new(config)
+	var sim: FlightSim = FlightSim.new(_config())
+	sim.skin.max_air_launches = 0
 	sim.surfaces.append(SurfaceRect.new(Rect2(-3.0, -1.0, 6.0, 1.0)))
 	sim.state = FlightSim.State.FLYING
 	sim.position = Vector2(0.0, 2.0)
@@ -134,12 +131,11 @@ func test_falling_below_kill_line_dies() -> void:
 
 
 func test_air_launches_are_limited() -> void:
-	var config: FeelConfig = _config()
-	config.max_air_launches = 0
-	var sim: FlightSim = _course_sim(config, 0)
+	var sim: FlightSim = _course_sim(_config(), 0)
+	sim.skin.max_air_launches = 0
 	assert_true(sim.launch(1), "launch from stuck")
 	assert_true(not sim.launch(1), "no air launch when disabled")
-	config.max_air_launches = 1
+	sim.skin.max_air_launches = 1
 	assert_true(sim.launch(-1), "one air launch when enabled")
 	assert_true(not sim.launch(1), "air launch budget is spent")
 
@@ -151,8 +147,8 @@ func test_charge_power_scales_launch() -> void:
 	weak.launch(1, 0.0)
 	var strong: FlightSim = _course_sim(config, 0)
 	strong.launch(1, 1.0)
-	assert_true(is_equal_approx(weak.velocity.y, config.launch_speed_y * config.charge_min_scale), "min charge")
-	assert_true(is_equal_approx(strong.velocity.y, config.launch_speed_y * config.charge_max_scale), "max charge")
+	assert_true(is_equal_approx(weak.velocity.y, weak.skin.launch_speed_y * config.charge_min_scale), "min charge")
+	assert_true(is_equal_approx(strong.velocity.y, strong.skin.launch_speed_y * config.charge_max_scale), "max charge")
 
 
 func test_stuck_object_rides_moving_surface() -> void:

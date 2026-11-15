@@ -1,0 +1,98 @@
+keys,en,es,pt_BR,de,fr,ru,ja,ko,tr,id
+TAP TO PLAY,TAP TO PLAY,TOCA PARA JUGAR,TOQUE PARA JOGAR,TIPPEN ZUM SPIELEN,TOUCHE POUR JOUER,НАЖМИ И ИГРАЙ,タップしてプレイ,터치해서 시작,OYNAMAK İÇİN DOKUN,KETUK UNTUK MAIN
+TAP TO RETRY,TAP TO RETRY,TOCA PARA REPETIR,TOQUE PARA REPETIR,TIPPEN FÜR NEUSTART,TOUCHE POUR REJOUER,НАЖМИ: ЕЩЁ РАЗ,タップでリトライ,터치해서 다시 하기,TEKRAR İÇİN DOKUN,KETUK UNTUK ULANG
+SKINS,SKINS,ASPECTOS,SKINS,SKINS,SKINS,СКИНЫ,スキン,스킨,SKINLER,SKIN
+STORE,STORE,TIENDA,LOJA,SHOP,BOUTIQUE,МАГАЗИН,ストア,상점,MAĞAZA,TOKO
+MISSIONS %d/%d,MISSIONS %d/%d,MISIONES %d/%d,MISSÕES %d/%d,MISSIONEN %d/%d,MISSIONS %d/%d,ЗАДАНИЯ %d/%d,ミッション %d/%d,미션 %d/%d,GÖREVLER %d/%d,MISI %d/%d
+DAILY,DAILY,DIARIO,DIÁRIO,TÄGLICH,QUOTIDIEN,ЕЖЕДНЕВНО,デイリー,일일,GÜNLÜK,HARIAN
+DAILY  !,DAILY  !,DIARIO  !,DIÁRIO  !,TÄGLICH  !,QUOTIDIEN  !,ЕЖЕДНЕВНО  !,デイリー  !,일일  !,GÜNLÜK  !,HARIAN  !
+FREE +%d  (AD),FREE +%d  (AD),GRATIS +%d (ANUNCIO),GRÁTIS +%d (ANÚNCIO),GRATIS +%d (WERBUNG),GRATUIT +%d (PUB),БЕСПЛАТНО +%d (РЕКЛАМА),無料 +%d (広告),무료 +%d (광고),BEDAVA +%d (REKLAM),GRATIS +%d (IKLAN)
+FREE: TOMORROW,FREE: TOMORROW,GRATIS: MAÑANA,GRÁTIS: AMANHÃ,GRATIS: MORGEN,GRATUIT : DEMAIN,БЕСПЛАТНО: ЗАВТРА,無料: 明日,무료: 내일,BEDAVA: YARIN,GRATIS: BESOK
+SETTINGS,SETTINGS,AJUSTES,AJUSTES,EINSTELLUNGEN,RÉGLAGES,НАСТРОЙКИ,設定,설정,AYARLAR,PENGATURAN
+COINS %d    GEMS %d,COINS %d    GEMS %d,MONEDAS %d    GEMAS %d,MOEDAS %d    GEMAS %d,MÜNZEN %d    JUWELEN %d,PIÈCES %d    GEMMES %d,МОНЕТЫ %d    КРИСТАЛЛЫ %d,コイン %d    ジェム %d,코인 %d    보석 %d,COIN %d    ELMAS %d,KOIN %d    PERMATA %d
+BEST %d,BEST %d,MEJOR %d,MELHOR %d,REKORD %d,RECORD %d,РЕКОРД %d,ベスト %d,최고 %d,EN İYİ %d,TERBAIK %d
+BEST,BEST,MEJOR,MELHOR,REKORD,RECORD,РЕКОРД,ベスト,최고,EN İYİ,TERBAIK
+COINS %d,COINS %d,MONEDAS %d,MOEDAS %d,MÜNZEN %d,PIÈCES %d,МОНЕТЫ %d,コイン %d,코인 %d,COIN %d,KOIN %d
+FEVER,FEVER,FIEBRE,FEBRE,FIEBER,FIÈVRE,ЖАР,フィーバー,피버,ATEŞ,FEVER
+FEVER!,FEVER!,¡FIEBRE!,FEBRE!,FIEBER!,FIÈVRE !,ЖАР!,フィーバー!,피버!,ATEŞ!,FEVER!
+SHOTS %d/%d,SHOTS %d/%d,DISPAROS %d/%d,TIROS %d/%d,SCHÜSSE %d/%d,TIRS %d/%d,ВЫСТРЕЛЫ %d/%d,ショット %d/%d,발사 %d/%d,ATIŞ %d/%d,TEMBAKAN %d/%d
+PERFECT,PERFECT,PERFECTO,PERFEITO,PERFEKT,PARFAIT,ИДЕАЛЬНО,パーフェクト,퍼펙트,MÜKEMMEL,SEMPURNA
+MISS,MISS,FALLO,ERROU,DANEBEN,RATÉ,МИМО,ミス,실패,ISKA,MELESET
+CLUTCH!,CLUTCH!,¡AL LÍMITE!,NO LIMITE!,KNAPP!,DE JUSTESSE !,В ПОСЛЕДНИЙ МИГ!,ギリギリ!,아슬아슬!,SON ANDA!,NYARIS!
+SECOND CHANCE,SECOND CHANCE,SEGUNDA OPORTUNIDAD,SEGUNDA CHANCE,ZWEITE CHANCE,SECONDE CHANCE,ВТОРОЙ ШАНС,セカンドチャンス,두 번째 기회,İKİNCİ ŞANS,KESEMPATAN KEDUA
+BULLSEYE +%d,BULLSEYE +%d,¡DIANA! +%d,NA MOSCA! +%d,VOLLTREFFER +%d,EN PLEIN CŒUR +%d,В ЯБЛОЧКО +%d,ど真ん中 +%d,정중앙 +%d,TAM İSABET +%d,TEPAT SASARAN +%d
+KITCHEN,KITCHEN,COCINA,COZINHA,KÜCHE,CUISINE,КУХНЯ,キッチン,주방,MUTFAK,DAPUR
+FOREST,FOREST,BOSQUE,FLORESTA,WALD,FORÊT,ЛЕС,森,숲,ORMAN,HUTAN
+KNIFE,KNIFE,CUCHILLO,FACA,MESSER,COUTEAU,НОЖ,ナイフ,나이프,BIÇAK,PISAU
+PISTOL,PISTOL,PISTOLA,PISTOLA,PISTOLE,PISTOLET,ПИСТОЛЕТ,ピストル,권총,TABANCA,PISTOL
+AXE,AXE,HACHA,MACHADO,AXT,HACHE,ТОПОР,斧,도끼,BALTA,KAPAK
+SHURIKEN,SHURIKEN,SHURIKEN,SHURIKEN,SHURIKEN,SHURIKEN,СЮРИКЕН,手裏剣,수리검,SHURIKEN,SHURIKEN
+BOOMERANG,BOOMERANG,BUMERÁN,BUMERANGUE,BUMERANG,BOOMERANG,БУМЕРАНГ,ブーメラン,부메랑,BUMERANG,BUMERANG
+GOLD KNIFE,GOLD KNIFE,CUCHILLO DORADO,FACA DOURADA,GOLDMESSER,COUTEAU D'OR,ЗОЛОТОЙ НОЖ,ゴールドナイフ,황금 나이프,ALTIN BIÇAK,PISAU EMAS
+NEW BEST!,NEW BEST!,¡NUEVO RÉCORD!,NOVO RECORDE!,NEUER REKORD!,NOUVEAU RECORD !,НОВЫЙ РЕКОРД!,新記録!,신기록!,YENİ REKOR!,REKOR BARU!
++%d COINS,+%d COINS,+%d MONEDAS,+%d MOEDAS,+%d MÜNZEN,+%d PIÈCES,+%d МОНЕТ,+%d コイン,+%d 코인,+%d COIN,+%d KOIN
++%d COINS  (x2),+%d COINS  (x2),+%d MONEDAS  (x2),+%d MOEDAS  (x2),+%d MÜNZEN  (x2),+%d PIÈCES  (x2),+%d МОНЕТ  (x2),+%d コイン  (x2),+%d 코인  (x2),+%d COIN  (x2),+%d KOIN  (x2)
+MISSION DONE  +%d COINS,MISSION DONE  +%d COINS,MISIÓN COMPLETA  +%d MONEDAS,MISSÃO CONCLUÍDA  +%d MOEDAS,MISSION GESCHAFFT  +%d MÜNZEN,MISSION RÉUSSIE  +%d PIÈCES,ЗАДАНИЕ ВЫПОЛНЕНО  +%d МОНЕТ,ミッション達成  +%d コイン,미션 완료  +%d 코인,GÖREV TAMAM  +%d COIN,MISI SELESAI  +%d KOIN
+MASTERY LEVEL %d,MASTERY LEVEL %d,MAESTRÍA NIVEL %d,MAESTRIA NÍVEL %d,MEISTERSCHAFT STUFE %d,MAÎTRISE NIVEAU %d,МАСТЕРСТВО: УРОВЕНЬ %d,マスタリー レベル %d,숙련도 레벨 %d,USTALIK SEVİYE %d,PENGUASAAN LEVEL %d
+%s READY TO UNLOCK!,%s READY TO UNLOCK!,¡%s LISTO PARA DESBLOQUEAR!,%s PRONTO PARA DESBLOQUEAR!,%s BEREIT ZUM FREISCHALTEN!,%s PRÊT À DÉBLOQUER !,%s МОЖНО ОТКРЫТЬ!,%s をアンロックできます!,%s 잠금 해제 가능!,%s AÇILMAYA HAZIR!,%s SIAP DIBUKA!
+NEXT SKIN: %s  %d%%,NEXT SKIN: %s  %d%%,SIGUIENTE: %s  %d%%,PRÓXIMA SKIN: %s  %d%%,NÄCHSTER SKIN: %s  %d%%,PROCHAIN SKIN : %s  %d%%,СЛЕДУЮЩИЙ СКИН: %s  %d%%,次のスキン: %s  %d%%,다음 스킨: %s  %d%%,SIRADAKİ SKIN: %s  %d%%,SKIN BERIKUTNYA: %s  %d%%
+HOME,HOME,INICIO,INÍCIO,MENÜ,ACCUEIL,МЕНЮ,ホーム,홈,ANA MENÜ,BERANDA
+CONTINUE  (AD),CONTINUE  (AD),CONTINUAR (ANUNCIO),CONTINUAR (ANÚNCIO),WEITER (WERBUNG),CONTINUER (PUB),ПРОДОЛЖИТЬ (РЕКЛАМА),コンティニュー (広告),이어하기 (광고),DEVAM ET (REKLAM),LANJUT (IKLAN)
+DOUBLE COINS  (AD),DOUBLE COINS  (AD),MONEDAS x2 (ANUNCIO),MOEDAS x2 (ANÚNCIO),MÜNZEN x2 (WERBUNG),PIÈCES x2 (PUB),МОНЕТЫ x2 (РЕКЛАМА),コイン2倍 (広告),코인 2배 (광고),COIN x2 (REKLAM),KOIN x2 (IKLAN)
+MASTERY LV %d,MASTERY LV %d,MAESTRÍA NV %d,MAESTRIA NV %d,MEISTERSCHAFT ST %d,MAÎTRISE NIV %d,МАСТЕРСТВО УР %d,マスタリー Lv %d,숙련도 Lv %d,USTALIK SV %d,PENGUASAAN LV %d
+SELECTED,SELECTED,ELEGIDO,SELECIONADA,GEWÄHLT,CHOISI,ВЫБРАН,選択中,선택됨,SEÇİLİ,DIPILIH
+SELECT,SELECT,ELEGIR,SELECIONAR,WÄHLEN,CHOISIR,ВЫБРАТЬ,選択,선택,SEÇ,PILIH
+LOCKED,LOCKED,BLOQUEADO,BLOQUEADA,GESPERRT,VERROUILLÉ,ЗАКРЫТ,ロック中,잠김,KİLİTLİ,TERKUNCI
+STARTER PACK,STARTER PACK,PACK INICIAL,PACOTE INICIAL,STARTERPAKET,PACK DE DÉPART,СТАРТОВЫЙ НАБОР,スターターパック,스타터 팩,BAŞLANGIÇ PAKETİ,PAKET PEMULA
+TRY,TRY,PROBAR,TESTAR,TESTEN,ESSAYER,ПРОБА,お試し,체험,DENE,COBA
+%d GEMS,%d GEMS,%d GEMAS,%d GEMAS,%d JUWELEN,%d GEMMES,%d КРИСТ.,%d ジェム,%d 보석,%d ELMAS,%d PERMATA
+%d COINS,%d COINS,%d MONEDAS,%d MOEDAS,%d MÜNZEN,%d PIÈCES,%d МОНЕТ,%d コイン,%d 코인,%d COIN,%d KOIN
+DAILY MISSIONS,DAILY MISSIONS,MISIONES DIARIAS,MISSÕES DIÁRIAS,TÄGLICHE MISSIONEN,MISSIONS DU JOUR,ЕЖЕДНЕВНЫЕ ЗАДАНИЯ,デイリーミッション,일일 미션,GÜNLÜK GÖREVLER,MISI HARIAN
+New missions every day,New missions every day,Nuevas misiones cada día,Novas missões todos os dias,Jeden Tag neue Missionen,De nouvelles missions chaque jour,Новые задания каждый день,毎日新しいミッション,매일 새로운 미션,Her gün yeni görevler,Misi baru setiap hari
+DONE,DONE,HECHO,FEITO,FERTIG,TERMINÉ,ГОТОВО,達成,완료,TAMAM,SELESAI
+Make %d PERFECT sticks,Make %d PERFECT sticks,Haz %d clavadas PERFECTAS,Faça %d cravadas PERFEITAS,Schaffe %d PERFEKTE Treffer,Réussis %d plantés PARFAITS,Сделай %d ИДЕАЛЬНЫХ попаданий,パーフェクトを%d回決める,퍼펙트 %d회 달성,%d MÜKEMMEL saplama yap,Lakukan %d tancapan SEMPURNA
+Stick %d times,Stick %d times,Clava %d veces,Crave %d vezes,Triff %d Mal,Plante %d fois,Воткнись %d раз,%d回刺す,%d번 꽂기,%d kez saplan,Menancap %d kali
+Play %d runs,Play %d runs,Juega %d partidas,Jogue %d partidas,Spiele %d Runden,Joue %d parties,Сыграй %d раз,%d回プレイする,%d판 플레이,%d el oyna,Main %d kali
+Play %d runs with the Axe,Play %d runs with the Axe,Juega %d partidas con el Hacha,Jogue %d partidas com o Machado,Spiele %d Runden mit der Axt,Joue %d parties avec la Hache,Сыграй %d раз с топором,斧で%d回プレイする,도끼로 %d판 플레이,Balta ile %d el oyna,Main %d kali dengan Kapak
+Play %d runs with the Shuriken,Play %d runs with the Shuriken,Juega %d partidas con el Shuriken,Jogue %d partidas com a Shuriken,Spiele %d Runden mit dem Shuriken,Joue %d parties avec le Shuriken,Сыграй %d раз с сюрикеном,手裏剣で%d回プレイする,수리검으로 %d판 플레이,Shuriken ile %d el oyna,Main %d kali dengan Shuriken
+Play %d runs with the Boomerang,Play %d runs with the Boomerang,Juega %d partidas con el Bumerán,Jogue %d partidas com o Bumerangue,Spiele %d Runden mit dem Bumerang,Joue %d parties avec le Boomerang,Сыграй %d раз с бумерангом,ブーメランで%d回プレイする,부메랑으로 %d판 플레이,Bumerang ile %d el oyna,Main %d kali dengan Bumerang
+Play %d runs with the Pistol,Play %d runs with the Pistol,Juega %d partidas con la Pistola,Jogue %d partidas com a Pistola,Spiele %d Runden mit der Pistole,Joue %d parties avec le Pistolet,Сыграй %d раз с пистолетом,ピストルで%d回プレイする,권총으로 %d판 플레이,Tabanca ile %d el oyna,Main %d kali dengan Pistol
+Collect %d coins,Collect %d coins,Consigue %d monedas,Colete %d moedas,Sammle %d Münzen,Ramasse %d pièces,Собери %d монет,コインを%d枚集める,코인 %d개 모으기,%d coin topla,Kumpulkan %d koin
+Reach %d m in one run,Reach %d m in one run,Alcanza %d m en una partida,Alcance %d m em uma partida,Erreiche %d m in einer Runde,Atteins %d m en une partie,Поднимись на %d м за одну игру,1回のプレイで%d m到達,한 판에 %d m 도달,Tek elde %d m'ye çık,Capai %d m dalam satu permainan
+Climb %d m in total,Climb %d m in total,Sube %d m en total,Suba %d m no total,Klettere insgesamt %d m,Grimpe %d m au total,Поднимись всего на %d м,合計%d m登る,총 %d m 오르기,Toplam %d m tırman,Panjat total %d m
+DAILY REWARD,DAILY REWARD,RECOMPENSA DIARIA,RECOMPENSA DIÁRIA,TÄGLICHE BELOHNUNG,RÉCOMPENSE DU JOUR,ЕЖЕДНЕВНАЯ НАГРАДА,デイリー報酬,일일 보상,GÜNLÜK ÖDÜL,HADIAH HARIAN
+DAY %d,DAY %d,DÍA %d,DIA %d,TAG %d,JOUR %d,ДЕНЬ %d,%d日目,%d일차,GÜN %d,HARI %d
+COINS,COINS,MONEDAS,MOEDAS,MÜNZEN,PIÈCES,МОНЕТЫ,コイン,코인,COIN,KOIN
+GEMS,GEMS,GEMAS,GEMAS,JUWELEN,GEMMES,КРИСТАЛЛЫ,ジェム,보석,ELMAS,PERMATA
+CLAIM,CLAIM,RECLAMAR,RESGATAR,ABHOLEN,RÉCUPÉRER,ЗАБРАТЬ,受け取る,받기,AL,KLAIM
+CLAIMED,CLAIMED,RECLAMADO,RESGATADO,ABGEHOLT,RÉCUPÉRÉ,ПОЛУЧЕНО,受け取り済み,받음,ALINDI,DIKLAIM
+Come back every day for bigger rewards,Come back every day for bigger rewards,Vuelve cada día para mejores premios,Volte todo dia para prêmios maiores,Komm jeden Tag wieder für größere Belohnungen,Reviens chaque jour pour de plus grosses récompenses,Заходи каждый день: награды растут,毎日ログインで報酬アップ,매일 접속하면 보상이 커져요,"Her gün gel, ödüller büyüsün",Datang tiap hari untuk hadiah lebih besar
+Next reward tomorrow,Next reward tomorrow,Próxima recompensa mañana,Próxima recompensa amanhã,Nächste Belohnung morgen,Prochaine récompense demain,Следующая награда завтра,次の報酬は明日,다음 보상은 내일,Sonraki ödül yarın,Hadiah berikutnya besok
+SOUND: %s,SOUND: %s,SONIDO: %s,SOM: %s,TON: %s,SON : %s,ЗВУК: %s,サウンド: %s,사운드: %s,SES: %s,SUARA: %s
+VIBRATION: %s,VIBRATION: %s,VIBRACIÓN: %s,VIBRAÇÃO: %s,VIBRATION: %s,VIBRATION : %s,ВИБРАЦИЯ: %s,バイブ: %s,진동: %s,TİTREŞİM: %s,GETAR: %s
+QUALITY: %s,QUALITY: %s,CALIDAD: %s,QUALIDADE: %s,QUALITÄT: %s,QUALITÉ : %s,КАЧЕСТВО: %s,画質: %s,품질: %s,KALİTE: %s,KUALITAS: %s
+BATTERY SAVER: %s,BATTERY SAVER: %s,AHORRO DE BATERÍA: %s,ECONOMIA DE BATERIA: %s,AKKU SPAREN: %s,ÉCO. BATTERIE : %s,ЭКОНОМИЯ БАТАРЕИ: %s,省電力: %s,절전 모드: %s,PİL TASARRUFU: %s,HEMAT BATERAI: %s
+LANGUAGE: %s,LANGUAGE: %s,IDIOMA: %s,IDIOMA: %s,SPRACHE: %s,LANGUE : %s,ЯЗЫК: %s,言語: %s,언어: %s,DİL: %s,BAHASA: %s
+ON,ON,SÍ,LIGADO,AN,OUI,ВКЛ,オン,켜짐,AÇIK,NYALA
+OFF,OFF,NO,DESLIGADO,AUS,NON,ВЫКЛ,オフ,꺼짐,KAPALI,MATI
+AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,АВТО,自動,자동,OTOMATİK,OTOMATIS
+HIGH,HIGH,ALTA,ALTA,HOCH,HAUTE,ВЫСОКОЕ,高,높음,YÜKSEK,TINGGI
+LOW,LOW,BAJA,BAIXA,NIEDRIG,BASSE,НИЗКОЕ,低,낮음,DÜŞÜK,RENDAH
+Version %s,Version %s,Versión %s,Versão %s,Version %s,Version %s,Версия %s,バージョン %s,버전 %s,Sürüm %s,Versi %s
+OWNED,OWNED,COMPRADO,ADQUIRIDO,GEKAUFT,ACHETÉ,КУПЛЕНО,購入済み,보유 중,ALINDI,DIMILIKI
+Thank you!,Thank you!,¡Gracias!,Obrigado!,Danke!,Merci !,Спасибо!,ありがとう!,감사합니다!,Teşekkürler!,Terima kasih!
+Payment pending...,Payment pending...,Pago pendiente...,Pagamento pendente...,Zahlung ausstehend...,Paiement en attente...,Платёж обрабатывается...,支払い処理中...,결제 대기 중...,Ödeme bekleniyor...,Pembayaran tertunda...
+Purchase not completed,Purchase not completed,Compra no completada,Compra não concluída,Kauf nicht abgeschlossen,Achat non finalisé,Покупка не завершена,購入は完了しませんでした,구매가 완료되지 않았습니다,Satın alma tamamlanmadı,Pembelian tidak selesai
+REMOVE ADS,REMOVE ADS,QUITAR ANUNCIOS,REMOVER ANÚNCIOS,WERBUNG ENTFERNEN,SUPPRIMER LES PUBS,УБРАТЬ РЕКЛАМУ,広告を削除,광고 제거,REKLAMLARI KALDIR,HAPUS IKLAN
+COIN POUCH,COIN POUCH,BOLSITA DE MONEDAS,SAQUINHO DE MOEDAS,MÜNZBEUTEL,BOURSE DE PIÈCES,МЕШОЧЕК МОНЕТ,コインポーチ,코인 주머니,COIN KESESİ,KANTONG KOIN
+COIN BAG,COIN BAG,BOLSA DE MONEDAS,SACO DE MOEDAS,MÜNZSACK,SAC DE PIÈCES,МЕШОК МОНЕТ,コインバッグ,코인 가방,COIN TORBASI,TAS KOIN
+COIN CHEST,COIN CHEST,COFRE DE MONEDAS,BAÚ DE MOEDAS,MÜNZTRUHE,COFFRE DE PIÈCES,СУНДУК МОНЕТ,コインチェスト,코인 상자,COIN SANDIĞI,PETI KOIN
+GEM POUCH,GEM POUCH,BOLSITA DE GEMAS,SAQUINHO DE GEMAS,JUWELENBEUTEL,BOURSE DE GEMMES,МЕШОЧЕК КРИСТАЛЛОВ,ジェムポーチ,보석 주머니,ELMAS KESESİ,KANTONG PERMATA
+GEM BAG,GEM BAG,BOLSA DE GEMAS,SACO DE GEMAS,JUWELENSACK,SAC DE GEMMES,МЕШОК КРИСТАЛЛОВ,ジェムバッグ,보석 가방,ELMAS TORBASI,TAS PERMATA
+GEM CHEST,GEM CHEST,COFRE DE GEMAS,BAÚ DE GEMAS,JUWELENTRUHE,COFFRE DE GEMMES,СУНДУК КРИСТАЛЛОВ,ジェムチェスト,보석 상자,ELMAS SANDIĞI,PETI PERMATA
+No ads,No ads,Sin anuncios,Sem anúncios,Keine Werbung,Sans pub,Без рекламы,広告なし,광고 없음,Reklamsız,Tanpa iklan
+Exclusive skin,Exclusive skin,Aspecto exclusivo,Skin exclusiva,Exklusiver Skin,Skin exclusif,Эксклюзивный скин,限定スキン,한정 스킨,Özel skin,Skin eksklusif
+%d coins,%d coins,%d monedas,%d moedas,%d Münzen,%d pièces,%d монет,%d コイン,%d 코인,%d coin,%d koin
+%d gems,%d gems,%d gemas,%d gemas,%d Juwelen,%d gemmes,%d кристаллов,%d ジェム,%d 보석,%d elmas,%d permata
+PAUSED,PAUSED,PAUSA,PAUSADO,PAUSE,PAUSE,ПАУЗА,ポーズ,일시정지,DURAKLATILDI,JEDA
+Store not available,Store not available,Tienda no disponible,Loja indisponível,Shop nicht verfügbar,Boutique indisponible,Магазин недоступен,ストアは利用できません,상점을 이용할 수 없습니다,Mağaza kullanılamıyor,Toko tidak tersedia

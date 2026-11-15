@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://skins/skin_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pistol"
+display_name = "PISTOL"
+price_coins = 2000
+price_gems = 40
+model_id = &"pistol"
+primary_color = Color(0.3, 0.82, 0.86, 1)
+secondary_color = Color(1, 0.56, 0.2, 1)
+accent_color = Color(1, 0.86, 0.3, 1)
+launch_speed_x = 4.6
+launch_speed_y = 10.5
+spin_speed_deg = 420.0
+gravity_scale = 1.0
+max_air_launches = 0
+stick_half_angle_deg = 50.0
+perfect_half_angle_deg = 12.0
+tip_local = Vector2(0.38, -0.42)
+tip_direction_deg = -90.0
+tip_count = 1
+tail_offset = 0.1
+front_offset = 0.5
+body_sample_count = 4
+ability = 2
+ability_charges = 2
+recoil_speed = 10.5

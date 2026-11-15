@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://skins/skin_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"shuriken"
+display_name = "SHURIKEN"
+price_coins = 600
+price_gems = 0
+model_id = &"shuriken"
+primary_color = Color(0.82, 0.87, 0.96, 1)
+secondary_color = Color(0.45, 0.5, 0.62, 1)
+accent_color = Color(1, 0.33, 0.36, 1)
+launch_speed_x = 4.6
+launch_speed_y = 9.6
+spin_speed_deg = 1100.0
+gravity_scale = 1.0
+max_air_launches = 1
+stick_half_angle_deg = 180.0
+perfect_half_angle_deg = 12.0
+tip_local = Vector2(0.42, 0)
+tip_direction_deg = 0.0
+tip_count = 4
+tail_offset = 0.0
+front_offset = 0.0
+body_sample_count = 0
+ability = 0

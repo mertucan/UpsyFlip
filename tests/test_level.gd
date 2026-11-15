@@ -138,6 +138,9 @@ func test_save_service_round_trip() -> void:
 	save.call("load_from_disk")
 	assert_eq(save.call("get_int", "best_score"), 42, "value survives a save/load cycle")
 	assert_eq(save.call("get_int", "missing", 7), 7, "missing key returns the fallback")
-	DirAccess.remove_absolute(ProjectSettings.globalize_path("user://test_save.json"))
+	for suffix: String in ["", ".bak"]:
+		var path: String = ProjectSettings.globalize_path("user://test_save.json" + suffix)
+		if FileAccess.file_exists(path):
+			DirAccess.remove_absolute(path)
 	save.set("save_path", original_path)
 	save.call("load_from_disk")

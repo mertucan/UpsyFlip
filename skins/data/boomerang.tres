@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://skins/skin_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"boomerang"
+display_name = "BOOMERANG"
+price_coins = 1200
+price_gems = 30
+model_id = &"boomerang"
+primary_color = Color(1, 0.76, 0.32, 1)
+secondary_color = Color(0.85, 0.55, 0.2, 1)
+accent_color = Color(0.92, 0.3, 0.26, 1)
+launch_speed_x = 5.0
+launch_speed_y = 11.0
+spin_speed_deg = 620.0
+gravity_scale = 1.0
+max_air_launches = 1
+stick_half_angle_deg = 40.0
+perfect_half_angle_deg = 10.0
+tip_local = Vector2(0.5, 0)
+tip_direction_deg = 0.0
+tip_count = 1
+tail_offset = -0.15
+front_offset = 0.4
+body_sample_count = 3
+ability = 1
+return_time = 0.55
+return_arc_height = 1.2

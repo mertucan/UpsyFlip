@@ -1,20 +1,23 @@
 class_name Hud
 extends CanvasLayer
 ## In-run HUD, built from code: score, best, coins, flash texts, theme banner,
-## retry prompt, charge bar and the debug control-mode switch.
-
-signal mode_pressed
+## charge bar and ammo counter.
 
 const OUTLINE_COLOR: Color = Color(0.05, 0.06, 0.12)
+const COMBO_COLOR: Color = Color(1.0, 0.82, 0.25)
+const FEVER_COLOR: Color = Color(1.0, 0.5, 0.15)
 
 var _score_label: Label
 var _best_label: Label
 var _coins_label: Label
 var _flash_label: Label
 var _banner_label: Label
-var _retry_label: Label
-var _mode_button: Button
 var _power_bar: ProgressBar
+var _combo_label: Label
+var _fever_label: Label
+var _fever_bar: ProgressBar
+var _ammo_label: Label
+var _countdown_label: Label
 var _flash_tween: Tween
 var _banner_tween: Tween
 
@@ -30,9 +33,33 @@ func _ready() -> void:
 	_flash_label.modulate.a = 0.0
 	_banner_label = _make_label(120, Control.PRESET_CENTER_TOP, 760.0)
 	_banner_label.modulate.a = 0.0
-	_retry_label = _make_label(72, Control.PRESET_CENTER, 0.0)
-	_retry_label.text = "TAP TO RETRY"
-	_retry_label.visible = false
+
+	_combo_label = _make_label(64, Control.PRESET_CENTER_TOP, 380.0)
+	_combo_label.modulate = COMBO_COLOR
+	_combo_label.visible = false
+	_fever_label = _make_label(72, Control.PRESET_CENTER_TOP, 640.0)
+	_fever_label.text = "FEVER"
+	_fever_label.modulate = FEVER_COLOR
+	_fever_label.visible = false
+	_fever_bar = ProgressBar.new()
+	_fever_bar.min_value = 0.0
+	_fever_bar.max_value = 1.0
+	_fever_bar.step = 0.0
+	_fever_bar.show_percentage = false
+	_fever_bar.visible = false
+	_fever_bar.modulate = FEVER_COLOR
+	_fever_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_fever_bar.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	_fever_bar.offset_left = 300.0
+	_fever_bar.offset_right = -300.0
+	_fever_bar.offset_top = 745.0
+	_fever_bar.offset_bottom = 765.0
+	add_child(_fever_bar)
+
+	_ammo_label = _make_label(52, Control.PRESET_CENTER_BOTTOM, -260.0)
+	_ammo_label.visible = false
+	_countdown_label = _make_label(220, Control.PRESET_CENTER, -150.0)
+	_countdown_label.visible = false
 
 	_power_bar = ProgressBar.new()
 	_power_bar.min_value = 0.0
@@ -48,37 +75,35 @@ func _ready() -> void:
 	_power_bar.offset_bottom = -280.0
 	add_child(_power_bar)
 
-	# Debug-only control mode switch for feel tuning.
-	_mode_button = Button.new()
-	_mode_button.focus_mode = Control.FOCUS_NONE
-	_mode_button.add_theme_font_size_override("font_size", 34)
-	_mode_button.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	_mode_button.offset_left = -300.0
-	_mode_button.offset_right = -30.0
-	_mode_button.offset_top = 160.0
-	_mode_button.offset_bottom = 240.0
-	_mode_button.pressed.connect(func() -> void: mode_pressed.emit())
-	add_child(_mode_button)
-
 
 func set_score(total: int) -> void:
 	_score_label.text = str(total)
 
 
 func set_best(best: int) -> void:
-	_best_label.text = "BEST %d" % best
+	_best_label.text = tr("BEST %d") % best
 
 
 func set_coins(coins: int) -> void:
-	_coins_label.text = "COINS %d" % coins
+	_coins_label.text = tr("COINS %d") % coins
 
 
-func set_mode_text(text: String) -> void:
-	_mode_button.text = text
+## Shows the PERFECT streak multiplier; hidden below x2.
+func set_combo(multiplier: int) -> void:
+	_combo_label.visible = multiplier >= 2
+	_combo_label.text = "x%d" % multiplier
 
 
-func show_retry(shown: bool) -> void:
-	_retry_label.visible = shown
+func set_fever(active: bool, fraction: float = 0.0) -> void:
+	_fever_label.visible = active
+	_fever_bar.visible = active
+	_fever_bar.value = fraction
+
+
+## Remaining ability charges (shots); hidden for skins without any.
+func set_ammo(charges: int, max_charges: int) -> void:
+	_ammo_label.visible = max_charges > 0
+	_ammo_label.text = tr("SHOTS %d/%d") % [charges, max_charges]
 
 
 func show_power(shown: bool, value: float = 0.0) -> void:
@@ -86,9 +111,11 @@ func show_power(shown: bool, value: float = 0.0) -> void:
 	_power_bar.value = value
 
 
-## True when a screen position is over a HUD button and must not launch.
-func blocks_touch(screen_position: Vector2) -> bool:
-	return _mode_button.get_global_rect().has_point(screen_position)
+## Big centered text for the pause state and the 3-2-1 resume countdown.
+## An empty string hides it.
+func show_center_text(text: String) -> void:
+	_countdown_label.visible = text != ""
+	_countdown_label.text = text
 
 
 ## Short pop-up text for moment-to-moment feedback.

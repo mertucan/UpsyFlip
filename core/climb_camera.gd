@@ -6,7 +6,24 @@ extends Camera3D
 var half_width: float = 3.7
 var follow_speed: float = 6.0
 
+var shake_max_offset: float = 0.22
+var shake_decay: float = 2.6
+
 var _target_y: float = 0.0
+var _trauma: float = 0.0
+
+
+func _process(delta: float) -> void:
+	# Screen shake only offsets the rendered frame; position (and so the
+	# death line) is unaffected.
+	_trauma = maxf(_trauma - shake_decay * delta, 0.0)
+	var strength: float = _trauma * _trauma * shake_max_offset
+	h_offset = randf_range(-strength, strength)
+	v_offset = randf_range(-strength, strength)
+
+
+func add_shake(amount: float) -> void:
+	_trauma = minf(_trauma + amount, 1.0)
 
 
 func setup(p_half_width: float, fov_deg: float, p_follow_speed: float) -> void:

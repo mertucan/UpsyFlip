@@ -15,3 +15,5 @@ platform_underside_color = Color(0.25, 0.33, 0.2, 1)
 moving_platform_color = Color(0.62, 0.82, 0.36, 1)
 target_color = Color(0.95, 0.45, 0.15, 1)
 stripe_spacing = 3.5
+bar_spacing = 2.2
+bar_width = 0.55

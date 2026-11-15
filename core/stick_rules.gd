@@ -17,3 +17,9 @@ static func evaluate(
 	if deviation <= stick_half_angle_deg:
 		return Quality.STICK
 	return Quality.BOUNCE
+
+
+## CLUTCH: the object was coming down and stuck within `zone` meters of the
+## bottom screen edge.
+static func is_clutch(height_above_bottom: float, impact_velocity_y: float, zone: float) -> bool:
+	return impact_velocity_y < 0.0 and height_above_bottom <= zone

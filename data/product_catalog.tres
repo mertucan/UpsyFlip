@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProductCatalog" load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://data/product_catalog.gd" id="1"]
+[ext_resource type="Script" path="res://data/product_data.gd" id="2"]
+[ext_resource type="Resource" path="res://data/products/starter_pack.tres" id="3"]
+[ext_resource type="Resource" path="res://data/products/remove_ads.tres" id="4"]
+[ext_resource type="Resource" path="res://data/products/coins_small.tres" id="5"]
+[ext_resource type="Resource" path="res://data/products/coins_medium.tres" id="6"]
+[ext_resource type="Resource" path="res://data/products/coins_large.tres" id="7"]
+[ext_resource type="Resource" path="res://data/products/gems_small.tres" id="8"]
+[ext_resource type="Resource" path="res://data/products/gems_medium.tres" id="9"]
+[ext_resource type="Resource" path="res://data/products/gems_large.tres" id="10"]
+
+[resource]
+script = ExtResource("1")
+products = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10")])

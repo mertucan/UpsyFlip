@@ -20,3 +20,6 @@ extends Resource
 @export_group("Background")
 ## Vertical spacing of the horizontal background stripes, in meters.
 @export var stripe_spacing: float = 2.5
+## Vertical bars (tile seams, tree trunks...). 0 spacing disables them.
+@export var bar_spacing: float = 0.0
+@export var bar_width: float = 0.1
